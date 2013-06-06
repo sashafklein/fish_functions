@@ -103,3 +103,7 @@ function ga
 		git add .
 	end
 end
+
+function fish_dir
+	cd ~/.config/fish/
+end
