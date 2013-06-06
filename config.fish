@@ -108,3 +108,7 @@ end
 function fish_dir
 	cd ~/.config/fish/
 end
+
+function gp
+	git pull $argv
+end
