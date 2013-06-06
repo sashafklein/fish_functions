@@ -93,7 +93,8 @@ function ztprep
 end
 
 function gac
-	git commit -m $argv
+	ga
+	gc $argv
 end
 
 function ga
