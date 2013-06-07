@@ -3,60 +3,12 @@ set PATH /Applications/Postgres.app/Contents/MacOS/bin $PATH
 
 set PATH bin $PATH # for bundle binstubs
 
-function code
-	cd ~/code
-end
-
-function bloc
-	cd ~/code/bloc
-end
-
-function gc
-	git commit -m $argv
-end
-
-function gs
-	git status
-end
-
-function gl
-	git lg
-end
-
-function gco
-	git checkout $argv
-end
-
-function fish_edit
-	sub ~/.config/fish/config.fish
-end
+##############################
+######### ZEUS BASED #########
+##############################
 
 function z
 	zeus start
-end
-
-function zs 
-	zeus s
-end
-
-function zt
-	if [ (count $argv) -gt 0 ]
-		zeus test $argv
-	else
-		zeus test spec
-	end
-end
-
-function zr
-	zeus rake $argv
-end
-
-function zc
-	zeus c
-end
-
-function ll
-	ls -lh $argv
 end
 
 function rr
@@ -76,20 +28,74 @@ function zeus_on
 	end
 end
 
-function zr
-	zeus rake $argv
+function mg
+	if zeus_on
+		zr db:migrate
+	else
+		echo "Zeus is not running"
+		rake db:migrate
+	end
 end
+
+function tprep
+	if zeus_on
+		zr db:test:prepare
+	else
+		echo "Zeus is not running"
+		rake db:test:prepare
+	end
+end
+
+function s 
+	if zeus_on
+		zeus s
+	else
+		echo "Zeus is not running"
+		rails s
+	end
+end
+
+function t
+	if zeus_on
+		if [ (count $argv) -gt 0 ]
+			zeus test $argv
+		else
+			zeus test spec
+		end
+	else
+		echo "Zeus is not running"
+		if [ (count $argv) -gt 0 ]
+			rspec $argv
+		else
+			rspec spec
+		end
+	end
+end
+
+function r
+	if zeus_on
+		zeus rake $argv
+	else
+		echo "Zeus is not running"
+		rake $argv
+	end
+end
+
+function c
+	if zeus_on
+		zeus c
+	else
+		echo "Zeus is not running"
+		rails c
+	end
+end
+
+##############################
+############ GIT #############
+##############################
 
 function gd
-	git diff
-end
-
-function zmig
-	zr db:migrate
-end
-
-function ztprep
-	zr db:test:prepare
+	git diff $argv
 end
 
 function gac
@@ -105,10 +111,46 @@ function ga
 	end
 end
 
+function gp
+	git pull $argv
+end
+
+function gc
+	git commit -m $argv
+end
+
+function gs
+	git status
+end
+
+function gl
+	git lg
+end
+
+function gco
+	git checkout $argv
+end
+
+##############################
+########### OTHER ############
+##############################
+
+function ll
+	ls -lh $argv
+end
+
+function fish_edit
+	sub ~/.config/fish/config.fish
+end
+
 function fish_dir
 	cd ~/.config/fish/
 end
 
-function gp
-	git pull $argv
+function code
+	cd ~/code
+end
+
+function bloc
+	cd ~/code/bloc
 end
