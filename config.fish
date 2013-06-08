@@ -161,6 +161,10 @@ function code
 	cd ~/$code_directory
 end
 
+function sb
+	sublime $argv
+end
+
 function bloc
 	cd ~/code/bloc
 end
