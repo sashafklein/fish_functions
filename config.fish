@@ -131,6 +131,10 @@ function gco
 	git checkout $argv
 end
 
+function gpush
+	git push $argv
+end
+
 ##############################
 ########### OTHER ############
 ##############################
@@ -147,14 +151,12 @@ function fish_dir
 	cd ~/.config/fish/
 end
 
-function gp
-	git pull $argv
-end
-
 function xf
 	cd ~/rails/ctw2
 end
 
+# Requires a variable $code_directory set to directory name
+# eg: set -U code_directory "rails"
 function code
 	cd ~/$code_directory
 end
