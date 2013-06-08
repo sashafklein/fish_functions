@@ -1,6 +1,6 @@
 rvm > /dev/null # load RVM environment
 set PATH /Applications/Postgres.app/Contents/MacOS/bin $PATH
-
+set fish_greeting ""
 set PATH bin $PATH # for bundle binstubs
 
 ##############################
@@ -156,7 +156,7 @@ function xf
 end
 
 function code
-	cd ~/code
+	cd ~/$code_directory
 end
 
 function bloc
