@@ -144,7 +144,7 @@ function ll
 end
 
 function fish_edit
-	sub ~/.config/fish/config.fish
+	sb ~/.config/fish/config.fish
 end
 
 function fish_dir
