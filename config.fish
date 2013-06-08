@@ -7,6 +7,10 @@ function code
 	cd ~/code
 end
 
+function sub
+	sublime $argv
+end
+
 function bloc
 	cd ~/code/bloc
 end
@@ -20,7 +24,7 @@ function gs
 end
 
 function gl
-	git lg
+	git log --pretty=format:'%Cred%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%cr) %C(bold blue)<%an>%Creset' --abbrev-commit --
 end
 
 function gco
@@ -111,4 +115,8 @@ end
 
 function gp
 	git pull $argv
+end
+
+function xf
+	cd ~/rails/ctw2
 end
