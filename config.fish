@@ -168,3 +168,7 @@ end
 function bloc
 	cd ~/code/bloc
 end
+
+function wod
+	cd ~/rails/ctw2
+end
