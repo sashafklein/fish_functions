@@ -13,7 +13,7 @@ end
 
 function rr
 	if zeus_on
-		zr routes
+		zeus rake routes
 	else
 		echo "Zeus is not running"
 		rake routes
@@ -30,7 +30,7 @@ end
 
 function mg
 	if zeus_on
-		zr db:migrate
+		zeus rake db:migrate
 	else
 		echo "Zeus is not running"
 		rake db:migrate
@@ -39,7 +39,7 @@ end
 
 function tprep
 	if zeus_on
-		zr db:test:prepare
+		zeus rake db:test:prepare
 	else
 		echo "Zeus is not running"
 		rake db:test:prepare
