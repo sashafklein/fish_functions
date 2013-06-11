@@ -144,7 +144,16 @@ function ll
 end
 
 function fish_edit
-	sb ~/.config/fish/config.fish
+    set -l result (dirh)
+
+    switch $result
+        case '*sashafklein*'
+            sublime ~/.config/fish/config.fish
+        case '*alexanderfklein*'
+            sub ~/.config/fish/config.fish
+        case '*'
+            echo $result
+    end
 end
 
 function fish_dir
