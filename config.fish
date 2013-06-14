@@ -135,6 +135,22 @@ function gpush
 	git push $argv
 end
 
+function gb
+	git branch $argv
+end
+
+function gc
+	git commit $argv
+end
+
+function g
+	git $argv
+end
+
+function gcpick
+	git cherry-pick $argv
+end
+
 ##############################
 ########### OTHER ############
 ##############################
