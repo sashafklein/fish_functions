@@ -83,10 +83,10 @@ end
 
 function c
 	if zeus_on
-		zeus c
+		zeus c $argv
 	else
 		echo "Zeus is not running"
-		rails c
+		rails c $argv
 	end
 end
 
@@ -157,6 +157,10 @@ end
 
 function ll
 	ls -lh $argv
+end
+
+function dtest
+	tail -f diagnostic.txt
 end
 
 function fish_edit
