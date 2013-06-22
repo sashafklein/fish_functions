@@ -115,10 +115,6 @@ function gp
 	git pull $argv
 end
 
-function gc
-	git commit -m $argv
-end
-
 function gs
 	git status
 end
