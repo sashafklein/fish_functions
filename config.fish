@@ -155,6 +155,10 @@ function ll
 	ls -lh $argv
 end
 
+function fs
+	foreman start
+end
+
 function dtest
 	tail -f diagnostic.txt
 end
