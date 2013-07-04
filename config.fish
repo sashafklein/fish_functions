@@ -135,12 +135,20 @@ function gco
 	git checkout $argv
 end
 
+function gcom
+	git checkout master
+end
+
 function gpush
 	git push $argv
 end
 
 function gb
 	git branch $argv
+end
+
+function gbd
+	git branch -d $argv
 end
 
 function gc
