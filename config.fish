@@ -13,10 +13,18 @@ end
 
 function rr
 	if zeus_on
-		zeus rake routes
+		if [ (count $argv) -gt 0 ]
+			zeus rake routes | grep $argv 
+		else
+			zeys rake routes
+		end
 	else
 		echo "Zeus is not running"
-		rake routes
+		if [ (count $argv) -gt 0 ]
+			rake routes | grep $argv
+		else
+			rake routes
+		end
 	end
 end
 
