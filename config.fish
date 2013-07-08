@@ -111,6 +111,10 @@ function gac
 	gc $argv
 end
 
+function gacm
+	gac -m $argv
+end
+
 function ga
 	if [ (count $argv) -gt 0 ]
 		git add $argv
@@ -172,11 +176,24 @@ function ll
 end
 
 function fs
-	foreman start
+	foreman start $argv
 end
 
 function dtest
 	tail -f diagnostic.txt
+end
+
+function sub.
+	set -l result (dirh)
+
+	switch $result
+		case '*sashafklein*'
+			sublime .
+		case '*alexanderfklein*'
+			sub .
+		case '*'
+			echo $result
+	end
 end
 
 function fish_edit
