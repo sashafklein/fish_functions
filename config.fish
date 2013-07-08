@@ -16,7 +16,7 @@ function rr
 		if [ (count $argv) -gt 0 ]
 			zeus rake routes | grep $argv 
 		else
-			zeys rake routes
+			zeus rake routes
 		end
 	else
 		echo "Zeus is not running"
@@ -221,10 +221,6 @@ end
 # eg: set -U code_directory "rails"
 function code
 	cd ~/$code_directory
-end
-
-function sb
-	sublime $argv
 end
 
 function bloc
