@@ -131,6 +131,16 @@ function gs
 	git status
 end
 
+function gsp
+	git stash pop
+	echo "Stash Popped"
+end
+
+function gss
+	git stash saved
+	echo "Stash Saved"
+end
+
 function gl
 	git log --pretty=format:'%Cred%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%cr) %C(bold blue)<%an>%Creset' --abbrev-commit --
 end
