@@ -137,7 +137,7 @@ function gsp
 end
 
 function gss
-	git stash saved
+	git stash save
 	echo "Stash Saved"
 end
 
