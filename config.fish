@@ -238,3 +238,7 @@ end
 function wod
 	cd ~/rails/ctw2
 end
+
+function course
+	cd ~/rails/node-js-sample
+end
