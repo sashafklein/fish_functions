@@ -133,12 +133,10 @@ end
 
 function gsp
 	git stash pop
-	echo "Stash Popped"
 end
 
 function gss
 	git stash save
-	echo "Stash Saved"
 end
 
 function gl
