@@ -175,6 +175,36 @@ function gcpick
 	git cherry-pick $argv
 end
 
+###############################
+######## CD SHORTCUTS #########
+###############################
+
+function fish_dir
+	cd ~/.config/fish/
+end
+
+function xf
+	cd ~/rails/ctw2
+end
+
+# Requires a variable $code_directory set to directory name
+# eg: set -U code_directory "rails"
+function code
+	cd ~/$code_directory
+end
+
+function bloc
+	cd ~/code/bloc
+end
+
+function wod
+	cd ~/rails/ctw2
+end
+
+function course
+	cd ~/rails/node-js-sample
+end
+
 ##############################
 ########### OTHER ############
 ##############################
@@ -215,30 +245,4 @@ function fish_edit
         case '*'
             echo $result
     end
-end
-
-function fish_dir
-	cd ~/.config/fish/
-end
-
-function xf
-	cd ~/rails/ctw2
-end
-
-# Requires a variable $code_directory set to directory name
-# eg: set -U code_directory "rails"
-function code
-	cd ~/$code_directory
-end
-
-function bloc
-	cd ~/code/bloc
-end
-
-function wod
-	cd ~/rails/ctw2
-end
-
-function course
-	cd ~/rails/node-js-sample
 end
