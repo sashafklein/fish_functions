@@ -221,17 +221,25 @@ function dtest
 	tail -f diagnostic.txt
 end
 
-function sub.
-	set -l result (dirh)
+function sb
+    set -l result (dirh)
 
-	switch $result
-		case '*sashafklein*'
-			sublime .
-		case '*alexanderfklein*'
-			sub .
-		case '*'
-			echo $result
-	end
+    switch $result
+        case '*sashafklein*'
+        	if [ (count $argv) -gt 0 ]
+            	sublime &argv
+            else
+            	sublime .
+            end
+        case '*alexanderfklein*'
+       		if [ (count $argv) -gt 0 ]
+            	sub &argv
+            else
+            	sub .
+            end
+        case '*'
+            echo $result
+    end
 end
 
 function fish_edit
