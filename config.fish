@@ -227,13 +227,13 @@ function sb
     switch $result
         case '*sashafklein*'
         	if [ (count $argv) -gt 0 ]
-            	sublime &argv
+            	sublime $argv
             else
             	sublime .
             end
         case '*alexanderfklein*'
        		if [ (count $argv) -gt 0 ]
-            	sub &argv
+            	sub $argv
             else
             	sub .
             end
