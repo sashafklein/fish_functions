@@ -202,7 +202,7 @@ function wod
 end
 
 function course
-	cd ~/rails/node-js-sample
+	cd ~/rails/bitstarter
 end
 
 ##############################
