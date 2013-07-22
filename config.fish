@@ -2,6 +2,7 @@ rvm > /dev/null # load RVM environment
 set PATH /Applications/Postgres.app/Contents/MacOS/bin $PATH
 set fish_greeting ""
 set PATH bin $PATH # for bundle binstubs
+set PATH /usr/local/bin $PATH
 
 ##############################
 ######### ZEUS BASED #########
@@ -203,6 +204,10 @@ end
 
 function course
 	cd ~/rails/bitstarter
+end
+
+function fit
+  cd ~/rails/fitness
 end
 
 ##############################
