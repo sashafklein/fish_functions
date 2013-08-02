@@ -222,7 +222,7 @@ function dtest
 end
 
 function sb
-    set -l result (dirh)
+    set -l result (pwd)
 
     switch $result
         case '*sashafklein*'
@@ -243,7 +243,7 @@ function sb
 end
 
 function fish_edit
-    set -l result (dirh)
+    set -l result (pwd)
 
     switch $result
         case '*sashafklein*'
