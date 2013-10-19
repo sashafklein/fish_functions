@@ -107,6 +107,10 @@ function gd
 	git diff $argv
 end
 
+function gh
+  hub browse
+end
+
 function gac
 	ga
 	gc $argv
