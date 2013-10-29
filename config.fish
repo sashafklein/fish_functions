@@ -107,6 +107,18 @@ function gd
 	git diff $argv
 end
 
+function gds
+  git diff --staged
+end
+
+function gdh
+  git diff HEAD^
+end
+
+function gri
+  git rebase -i $argv
+end
+
 function gh
   hub browse
 end
@@ -200,6 +212,10 @@ end
 
 function bloc
 	cd ~/code/bloc
+end
+
+function meatup
+  cd ~/code/meatup
 end
 
 function wod
