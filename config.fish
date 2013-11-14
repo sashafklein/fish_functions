@@ -39,19 +39,19 @@ end
 
 function mg
 	if zeus_on
-		zeus rake db:migrate
+		zeus rake db:migrate $argv
 	else
 		echo "Zeus is not running"
-		rake db:migrate
+		rake db:migrate $argv
 	end
 end
 
 function tprep
 	if zeus_on
-		zeus rake db:test:prepare
+		zeus rake db:test:prepare $argv
 	else
 		echo "Zeus is not running"
-		rake db:test:prepare
+		rake db:test:prepare $argv
 	end
 end
 
@@ -108,7 +108,7 @@ function gd
 end
 
 function gds
-  git diff --staged
+  git diff --staged $argv
 end
 
 function gdh
@@ -117,6 +117,10 @@ end
 
 function gri
   git rebase -i $argv
+end
+
+function gback
+  git reset HEAD^
 end
 
 function gh
@@ -145,7 +149,7 @@ function gp
 end
 
 function gs
-	git status
+	git status $argv
 end
 
 function gsp
@@ -182,6 +186,10 @@ end
 
 function gc
 	git commit $argv
+end
+
+function grb
+  git rebase $argv
 end
 
 function g
@@ -240,6 +248,10 @@ end
 
 function fs
 	foreman start $argv
+end
+
+function hcon
+  heroku run console
 end
 
 function dtest
