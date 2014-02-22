@@ -121,6 +121,10 @@ end
 ############ GIT #############
 ##############################
 
+function gclean!
+  git clean -f -d
+end
+
 function gd
   git diff $argv
 end
