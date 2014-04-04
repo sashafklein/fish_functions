@@ -121,6 +121,10 @@ end
 ############ GIT #############
 ##############################
 
+function gcurrent
+  git rev-parse --abbrev-ref HEAD
+end
+
 function gclean!
   git clean -f -d
 end
