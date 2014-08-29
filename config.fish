@@ -141,9 +141,18 @@ function gdh
   git diff HEAD^
 end
 
-function gri
-  git rebase -i $argv
+function gr
+  git rebase $argv
 end
+
+function gri
+  gr -i $argv
+end
+
+function grc
+  gr --continue
+end
+
 
 function gback
   git reset HEAD^
@@ -214,6 +223,10 @@ function gc
   git commit $argv
 end
 
+function gca
+  gc --amend
+end
+
 function grb
   git rebase $argv
 end
@@ -224,6 +237,10 @@ end
 
 function gcpick
   git cherry-pick $argv
+end
+
+function grh
+  git reset --hard $argv
 end
 
 ###############################
@@ -246,6 +263,11 @@ function code
   else
     cd ~/$code_directory
   end
+end
+
+# Shorter alias method
+function f 
+  code $argv
 end
 
 function design
@@ -289,7 +311,7 @@ function fs
 end
 
 function hcon
-  heroku run console
+  heroku run rails console
 end
 
 function dtest
