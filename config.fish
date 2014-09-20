@@ -322,32 +322,25 @@ function sb
     set -l result (pwd)
 
     switch $result
-        case '*sashafklein*'
-          if [ (count $argv) -gt 0 ]
-              sublime $argv
-            else
-              sublime .
-            end
-        case '*alexanderfklein*'
-          if [ (count $argv) -gt 0 ]
-              sub $argv
-            else
-              sub .
-            end
-        case '*'
-            echo $result
+      case '*sashafklein*' or '*sasha*' or '*niko*'
+        if [ (count $argv) -gt 0 ]
+          sublime $argv
+        else
+          sublime .
+        end
+      case '*alexanderfklein*'
+        if [ (count $argv) -gt 0 ]
+          sub $argv
+        else
+          sub .
+        end
+      case '*'
+        echo $result
     end
 end
 
 function fish_edit
-    set -l result (pwd)
+  set -l result (pwd)
 
-    switch $result
-        case '*sashafklein*'
-            sublime ~/.config/fish/config.fish
-        case '*alexanderfklein*'
-            sub ~/.config/fish/config.fish
-        case '*'
-            echo $result
-    end
+  sb ~/.config/fish/config.fish
 end
