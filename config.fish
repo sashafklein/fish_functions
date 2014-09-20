@@ -153,7 +153,6 @@ function grc
   gr --continue
 end
 
-
 function gback
   git reset HEAD^
 end
@@ -251,10 +250,6 @@ function fish_dir
   cd ~/.config/fish/
 end
 
-function xf
-  cd ~/rails/ctw2
-end
-
 # Requires a variable $code_directory set to directory name
 # eg: set -U code_directory "rails"
 function code
@@ -270,37 +265,13 @@ function f
   code $argv
 end
 
-function design
-  cd ~/$code_directory/design-roadmap
-end
-
 function bloc
   cd ~/code/bloc
-end
-
-function meatup
-  cd ~/code/meatup
-end
-
-function wod
-  cd ~/rails/ctw2
-end
-
-function course
-  cd ~/rails/bitstarter
-end
-
-function fit
-  cd ~/rails/fitness
 end
 
 ##############################
 ########### OTHER ############
 ##############################
-
-function fj
-  functional-javascript $argv
-end
 
 function ll
   ls -lh $argv
