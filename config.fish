@@ -4,6 +4,8 @@ set fish_path $HOME/.oh-my-fish
 # Theme
 set fish_theme robbyrussell
 
+source ~/.nvm-fish/nvm.fish
+
 # Which plugins would you like to load? (plugins can be found in ~/.oh-my-fish/plugins/*)
 # Custom plugins may be added to ~/.oh-my-fish/custom/plugins/
 # Example format: set fish_plugins autojump bundler
@@ -15,7 +17,6 @@ set fish_theme robbyrussell
 . $fish_path/oh-my-fish.fish
 
 rvm > /dev/null
-
 
 
 ##############################
@@ -272,6 +273,10 @@ end
 ##############################
 ########### OTHER ############
 ##############################
+
+function b
+  bundle $argv
+end
 
 function ll
   ls -lh $argv
