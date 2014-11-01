@@ -267,6 +267,14 @@ function f
   code $argv
 end
 
+function plan
+  if [ (count $argv) -gt 0 ]
+    f planit/$argv
+  else
+    f planit
+  end
+end
+
 function bloc
   cd ~/code/bloc
 end
