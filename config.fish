@@ -30,6 +30,10 @@ function z
   zeus start
 end
 
+function rmz
+  rm .zeus.sock
+end
+
 function rr
   if zeus_on
     if [ (count $argv) -gt 0 ]
