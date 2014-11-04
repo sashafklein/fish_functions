@@ -7,6 +7,7 @@ set fish_greeting ''
 set fish_theme robbyrussell
 
 source ~/.nvm-fish/nvm.fish
+# set SSL_CERT_FILE /usr/local/etc/openssl/cert.pem
 
 # Which plugins would you like to load? (plugins can be found in ~/.oh-my-fish/plugins/*)
 # Custom plugins may be added to ~/.oh-my-fish/custom/plugins/
@@ -266,6 +267,14 @@ end
 # Shorter alias method
 function f 
   code $argv
+end
+
+function plan
+  if [ (count $argv) -gt 0 ]
+    f planit/$argv
+  else
+    f planit
+  end
 end
 
 function bloc
