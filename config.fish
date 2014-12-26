@@ -250,6 +250,10 @@ function grh
   git reset --hard $argv
 end
 
+function gbdelete
+  git push origin --delete $argv
+end
+
 ###############################
 ######## CD SHORTCUTS #########
 ###############################
