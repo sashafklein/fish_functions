@@ -125,6 +125,15 @@ function c
   end
 end
 
+function jt
+  if zeus_on
+    zeus tr spec:javascript
+  else
+    echo "Zeus is not running"
+    rake spec:javascript RAILS_ENV=test
+  end
+end
+
 ##############################
 ############ GIT #############
 ##############################
