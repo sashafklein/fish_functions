@@ -127,10 +127,18 @@ end
 
 function jt
   if zeus_on
-    zeus tr spec:javascript
+    if [ (count $argv) -gt 0 ]
+      zeus tr spec:javascript SPEC=$argv
+    else
+      zeus tr spec:javascript
+    end
   else
     echo "Zeus is not running"
-    rake spec:javascript RAILS_ENV=test
+    if [ (count $argv) -gt 0 ]
+      rake spec:javascript RAILS_ENV=test SPEC=$argv
+    else
+      rake spec:javascript RAILS_ENV=test
+    end
   end
 end
 
@@ -301,6 +309,11 @@ end
 ##############################
 ########### OTHER ############
 ##############################
+
+
+function tasks
+  ps aux | grep $argv
+end
 
 function b
   bundle $argv
