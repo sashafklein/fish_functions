@@ -21,6 +21,8 @@ source ~/.nvm-fish/nvm.fish
 
 rvm > /dev/null
 
+set -xU ANDROID_HOME /usr/local/opt/android-sdk
+
 
 ##############################
 ######### ZEUS BASED #########
